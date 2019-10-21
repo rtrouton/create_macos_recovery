@@ -22,9 +22,9 @@ Run the `create_macos_recovery.sh` script with one argument: the path to an "Ins
 
 Example usage: 
 
-If you have a macOS Mojave 10.14.x installer available, run this command:
+If you have a macOS Catalina 10.15.x installer available, run this command:
 
-`sudo /path/to/create_macos_recovery.sh "/Applications/Install macOS Mojave.app"`
+`sudo /path/to/create_macos_recovery.sh "/Applications/Install macOS Catalina.app"`
 
 This should replace the existing Recovery volume or partition with a fresh install, using the Recovery installation tools available from the macOS installer app.
 
