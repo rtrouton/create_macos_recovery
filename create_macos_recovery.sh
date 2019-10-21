@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This script uses a macOS 10.13 and later installer application to repair the Recovery volume (APFS) or partition (HFS+).
+# 
+# Based on the following script:
+# https://gist.github.com/jonathantneal/f20e6f3e03d5637f983f8543df70cef5
+
+
 # Provide custom colors in Terminal for status and error messages
 
 msg_status() {
