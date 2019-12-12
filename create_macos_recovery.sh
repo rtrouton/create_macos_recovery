@@ -77,8 +77,8 @@ fi
 # Define download URL and name for the RecoveryHDUpdate installer package
 # which includes the tools needed to rebuild the Recovery volume or partition.
 
-recovery_download="http://swcdn.apple.com/content/downloads/22/49/061-27895-A_JKAUDHYA2T/sv4mim38x186g0sm0hru6mjwk049rc8b6y/SecUpd2019-006HighSierra.RecoveryHDUpdate.pkg"
-recovery_package="SecUpd2019-006HighSierra.RecoveryHDUpdate.pkg"
+recovery_download="http://swcdn.apple.com/content/downloads/54/50/061-45391-A_2SCT03PHY1/sjys2cs5yf42mom66iwafx262weef2gmjq/SecUpd2019-007HighSierra.RecoveryHDUpdate.pkg"
+recovery_package="SecUpd2019-007HighSierra.RecoveryHDUpdate.pkg"
 
 # Detect if the macOS installer application is running macOS 10.13.x or later. If the
 # macOS installer application is for 10.12.x or earlier, stop and display an error message.
@@ -125,7 +125,7 @@ if [[ -d /private/tmp/recoveryupdate"$installer_version" ]]; then
          msg_error "Recovery tools returned the following non-zero exit code: $return_code"
          exit $return_code
       fi
-  else
+  elif [[ "${filesystem_type}" == "hfs" ]]; then
 	msg_status "Running ensureRecoveryPartition for non-APFS target volume: ${boot_drive}"
 	/private/tmp/recoveryupdate"$installer_version"/Scripts/Tools/dm ensureRecoveryPartition "$boot_drive" "$mount_point/BaseSystem.dmg" "$mount_point/BaseSystem.chunklist" "$mount_point/AppleDiagnostics.dmg" "$mount_point/AppleDiagnostics.chunklist" 0 0 0
 	return_code=$(($return_code + $?))
@@ -136,6 +136,9 @@ if [[ -d /private/tmp/recoveryupdate"$installer_version" ]]; then
          msg_error "Recovery tools returned the following non-zero exit code: $return_code"
          exit $return_code
       fi
+  else
+	msg_error "Failed to create $installer_version Recovery partition on ${boot_drive}."
+	msg_error "${boot_drive} does not have an APFS or HFS+ filesystem."
   fi
 else
    msg_error "Unable to locate the following directory: /private/tmp/recoveryupdate"$installer_version""
