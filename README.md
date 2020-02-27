@@ -31,13 +31,13 @@ This should replace the existing Recovery volume or partition with a fresh insta
 
 What the script does:
 
-1. Downloads the following installer package from Apple's Software Update service: `SecUpd2019-005HighSierra.RecoveryHDUpdate.pkg`
+1. Downloads the following installer package from Apple's Software Update service: `SecUpd2020-001HighSierra.RecoveryHDUpdate.pkg`
 
-2. Expands `SecUpd2019-005HighSierra.RecoveryHDUpdate.pkg` into a directory in `/private/tmp` in order to get access to the `dm` tool included with this installer package.
+2. Expands `SecUpd2020-001HighSierra.RecoveryHDUpdate.pkg` into a directory in `/private/tmp` in order to get access to the `dm` tool included with this installer package.
 
 3. Uses the `dm` tool and the Recovery installation tools available from the macOS installer app to rebuild the Recovery volume or partition.
 
-4. Cleans up by removing the downloaded `SecUpd2019-005HighSierra.RecoveryHDUpdate.pkg` and expanded package contents.
+4. Cleans up by removing the downloaded `SecUpd2020-001HighSierra.RecoveryHDUpdate.pkg` and expanded package contents.
 
 This script has been tested with the following OS installers from the Mac App Store:
 
