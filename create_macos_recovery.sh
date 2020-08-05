@@ -77,8 +77,8 @@ fi
 # Define download URL and name for the RecoveryHDUpdate installer package
 # which includes the tools needed to rebuild the Recovery volume or partition.
 
-recovery_download="http://swcdn.apple.com/content/downloads/54/11/001-12354-A_T4W3OKDEX7/xf785kp341cakvok70utt651o2hk1h8wx9/SecUpd2020-003HighSierra.RecoveryHDUpdate.pkg"
-recovery_package="SecUpd2020-003HighSierra.RecoveryHDUpdate.pkg"
+recovery_download="http://swcdn.apple.com/content/downloads/14/54/001-08570-A_XCP1PVIXQK/xg4hvg6zgpoxonqkgiw2e2cqo1c0isl97q/SecUpd2020-004HighSierra.RecoveryHDUpdate.pkg"
+recovery_package="SecUpd2020-004HighSierra.RecoveryHDUpdate.pkg"
 
 # Detect if the macOS installer application is running macOS 10.13.x or later. If the
 # macOS installer application is for 10.12.x or earlier, stop and display an error message.
