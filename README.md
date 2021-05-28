@@ -12,6 +12,8 @@ This script uses a macOS 10.13 and later installer application to repair the Rec
 * 10.14.x
 * 10.15.x
 
+**Note:** macOS Big Sur (macOS 11.x) made significant changes to the Recovery volume and it is unlikely this script will support any version of macOS past macOS 10.15.x.
+
 
 **Running the script**
 
